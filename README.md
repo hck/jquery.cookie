@@ -21,3 +21,11 @@ If you want to set few cookies, you can use
 You can get all cookies in array with names of cookies as keys just by calling:
 
     $.cookie();
+
+To remove cookie with specified name just use
+
+    $.removeCookie('cookie_name');
+
+or remove all cookies with
+
+    $.removeCookie();
