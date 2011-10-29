@@ -9,7 +9,7 @@
  */
 
 (function($){
-    $.cookie = function(name, val) {
+    $.cookie = function(name, val, duration) {
         var trim = function(str){
             return str.replace(/(^\s+)|(\s+$)/g, '');
         };
@@ -28,7 +28,8 @@
 
         if(!name) return cookies;
 
-        if(val) document.cookie = name + '=' + encodeURIComponent(val);
+        var expires = duration?new Date(new Date().getTime() + duration*1000).toGMTString():false;
+        if(val) document.cookie = name + '=' + encodeURIComponent(val) + ((expires)?'; expires=' + expires:'');
         else return cookies[name];
 
         return $;
