@@ -9,7 +9,7 @@
  */
 
 (function($){
-    $.cookie = function(name, val, durarion) {
+    $.cookie = function(name, val, duration) {
         var trim = function(str){
             return str.replace(/(^\s+)|(\s+$)/g, '');
         };
